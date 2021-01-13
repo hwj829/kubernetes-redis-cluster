@@ -4,7 +4,7 @@ FROM rhel7
 COPY epel-7.repo  /etc/yum.repos.d/epel.repo
 
 RUN yum install redis hostname -y ; yum clean all && \
-    yum yum -y install wget
+    yum -y install wget
 
 COPY peer-finder /bin/peer-finder
 RUN chmod u+x /bin/peer-finder
