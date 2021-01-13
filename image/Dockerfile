@@ -7,4 +7,4 @@ RUN yum install redis hostname -y ; yum clean all && \
     yum -y install wget
 
 COPY peer-finder /bin/peer-finder
-RUN chmod u+x /bin/peer-finder
+RUN chmod 777 /bin/peer-finder
