@@ -13,10 +13,10 @@ RUN chmod -R 777 /conf /data/redis
 #RUN sed -i -e "/myself/ s/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/${POD_IP}/" /conf/redis.conf
 
 #设置端口
-EXPOSE 6379
+#EXPOSE 6379
 
 #启动
-ENTRYPOINT ["redis-server","/conf/redis.conf"]
+#ENTRYPOINT ["redis-server","/conf/redis.conf"]
 
 
 
