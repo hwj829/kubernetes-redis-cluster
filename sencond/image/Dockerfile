@@ -4,9 +4,17 @@ FROM rhel7
 COPY epel-7.repo  /etc/yum.repos.d/epel.repo
 
 RUN yum install redis hostname -y ; yum clean all && \
-    cp /usr/local/etc/redis/redis.conf /conf/ && \
-    mkdir /data/
+    mkdir /data/conf/
 
-COPY update-node.sh /data/
-RUN chmod 777 /data/update-node.sh /conf/ && \
-    ls -tral /data/ /conf/ /usr/local/etc/redis/
+COPY redis.conf /data/conf/
+
+RUN sed -i -e "/myself/ s/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/${POD_IP}/" /data/conf/redis.conf
+
+#设置端口
+EXPOSE 6379
+
+#启动
+ENTRYPOINT ["/usr/bin/redis-server","/data/conf/redis.conf"]
+
+
+
