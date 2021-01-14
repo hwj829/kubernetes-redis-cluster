@@ -12,6 +12,8 @@ RUN chmod -R 777 /conf
 
 #RUN sed -i -e "/myself/ s/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/${POD_IP}/" /conf/redis.conf
 
+echo '######' >> /conf/redis.conf
+
 #设置端口
 EXPOSE 6379
 
