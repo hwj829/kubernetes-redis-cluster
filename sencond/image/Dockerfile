@@ -8,7 +8,7 @@ RUN yum install redis hostname -y ; yum clean all && \
 
 COPY redis.conf /conf/
 
-RUN chmod -R 777 /conf && \
+RUN chmod -R 777 /conf /data/redis && \
     echo '######' >> /conf/redis.conf
 
 #RUN sed -i -e "/myself/ s/[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/${POD_IP}/" /conf/redis.conf
