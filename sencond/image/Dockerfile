@@ -3,7 +3,7 @@ FROM rhel7
 #RUN yum install epel-release -y
 COPY epel-7.repo  /etc/yum.repos.d/epel.repo
 
-RUN yum install redis:redis-5.0.3 hostname -y ; yum clean all && \
+RUN yum install redis5 hostname -y ; yum clean all && \
     cp /usr/local/etc/redis/redis.conf /conf/ && \
     mkdir /data/
 
