@@ -6,8 +6,8 @@ metadata:
 spec:
   type: ClusterIP
   ports:
-    - port: 16379
-      targetPort: 16379
+    - port: 6379
+      targetPort: 6379
 #      name: client
 #    - port: 6379
 #      targetPort: 6379
