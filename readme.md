@@ -1,8 +1,8 @@
 
 ## 步骤一：创建Service,configMap,StatefulSet
-oc create -f .\kubernetes-redis-cluster\third\redis-sts.yaml
+oc create -f .\kubernetes-redis-cluster\redis-sts.yaml
 
-oc create -f .\kubernetes-redis-cluster\third\redis-svc.yaml
+oc create -f .\kubernetes-redis-cluster\redis-svc.yaml
 
 ## 步骤二：部署RedisCluster
 #### 方案一
